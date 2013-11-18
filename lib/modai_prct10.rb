@@ -1,5 +1,4 @@
 require "modai_prct10/version"
-require "modai_prct10/racional"
 require "modai_prct10/matrizAbstracta"
 require "modai_prct10/matrizDensa"
 require "modai_prct10/matrizDispersa"
