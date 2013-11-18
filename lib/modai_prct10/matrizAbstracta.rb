@@ -1,4 +1,3 @@
-!# /usr/bin/ruby
 # matrizAbstracta.rb
 require "racional"
 

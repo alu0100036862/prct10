@@ -1,4 +1,3 @@
-!# /usr/bin/ruby
 # matrizDispersa.rb
 require "matrizAbstracta"
 
