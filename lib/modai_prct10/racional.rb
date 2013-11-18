@@ -1,6 +1,6 @@
 # racional.rb
 
-require "gcd"
+require "./gcd.rb"
 
 class Racional
         
