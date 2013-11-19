@@ -12,7 +12,7 @@ end
 class MatrizDensa < MatrizAbstracta
 
 	# Inicialización
-	def initialize()
+	def initialize(matriz)
 
 		@matriz = matriz
 		@filas = matriz[0].size
