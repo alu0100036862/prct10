@@ -124,7 +124,7 @@ class MatrizDensa < MatrizAbstracta
 	# Minimo de matriz
 	def min
 
-		minimo = tope
+		minimo = $tope
 		for i in 0...matriz.size
 			for j in 0...matriz[i].size
 				if matriz[i][j].to_f < minimo
