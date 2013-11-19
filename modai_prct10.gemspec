@@ -6,10 +6,10 @@ require 'modai_prct10/version'
 Gem::Specification.new do |spec|
   spec.name          = "modai_prct10"
   spec.version       = ModaiPrct10::VERSION
-  spec.authors       = ["Dailos Herrera Bencomo"]
+  spec.authors       = ["Dailos Herrera Bencomo y Mohammed Mahrach"]
   spec.email         = ["alu0100036862@etsii.ull.es"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Simply generates modai_prct10 ipsum text.}
+  spec.summary       = %q{modai_prct10 ipsum generator}
   spec.homepage      = ""
   spec.license       = "MIT"
 

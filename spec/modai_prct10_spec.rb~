@@ -1,0 +1,117 @@
+require 'spec_helper'
+require 'modai_prct10'
+include ModaiPrct10
+
+describe ModaiPrct10 do
+
+        before :each do
+
+                matA = [nil, {1 => 4}] # [[0,0],[0,4]]
+                matB = [{0 => 5}, nil] # [[5,0],[0,0]]
+
+                matA_R = [nil, {1 => Racional.new(4,1)}] # [[Racional.new(0,1),Racional.new(0,1)],[Racional.new(0,1),Racional.new(4,1)]]
+                matB_R = [{0 => Racional.new(5,1)}, nil] # [[Racional.new(5,1),Racional.new(0,1)],[Racional.new(0,1),Racional.new(0,1)]]
+
+                @matrizA = MatrizDispersa.new(matA)
+                @matrizB = MatrizDispersa.new(matB)
+
+                @matrizA_R = MatrizDispersa.new(matA_R)
+                @matrizB_R = MatrizDispersa.new(matB_R)
+
+        end
+
+        context 'comprobar los accessors (DISPERSA)' do
+
+                it "Se debe invocar al metodo matriz() para obtener la matriz (DISPERSA)" do
+                        @matrizA.respond_to?("matriz").should == true
+                end
+                
+                it "Se debe invocar al metodo filas() para obtener el numero de filas (DISPERSA)" do
+                        @matrizA.respond_to?("filas").should == true
+                end
+
+                it "Se debe invocar al metodo columnas() para obtener el numero de columnas (DISPERSA)" do
+                        @matrizA.respond_to?("columnas").should == true
+                end
+
+                it "Se debe invocar al metodo matriz() para obtener la matriz de racionales (DISPERSA)" do
+                        @matrizA_R.respond_to?("matriz").should == true
+                end
+                
+                it "Se debe invocar al metodo filas() para obtener el numero de filas de matriz de racionales (DISPERSA)" do
+                        @matrizA_R.respond_to?("filas").should == true
+                end
+
+                it "Se debe invocar al metodo columnas() para obtener el numero de columnas de matriz de racionales (DISPERSA)" do
+                        @matrizA_R.respond_to?("columnas").should == true
+                end
+
+        end
+
+        context 'Comprobar metodos de conversion' do
+
+                it "Se debe mostrar la matriz (DISPERSA)" do
+                        @matrizA.to_s.should == MatrizDispersa.new([nil, {1 => 4}]).to_s
+                end
+
+                it "Se debe convertir a punto flotantes (DISPERSA)" do
+                        @matrizA.to_f.to_s.should == MatrizDispersa.new([nil, {1 => 4.0}]).to_s
+                end
+
+                it "Se debe mostrar la matriz de racionales (DISPERSA)" do
+                        @matrizA_R.to_s.should == MatrizDispersa.new([nil, {1 => Racional.new(4,1)}]).to_s
+                end
+
+        end
+
+        context 'Comprobar las operaciones entre matrices (DISPERSA)' do
+
+
+                it "Se debe poder sumar dos matrices" do
+                        (@matrizA + @matrizB).to_s.should == MatrizDispersa.new([{0 => 5}, {1 => 4}]).to_s
+                end
+          
+                it "Se debe poder restar dos matrices" do
+                        (@matrizA - @matrizB).to_s.should == MatrizDispersa.new([{0 => -5}, {1 => 4}]).to_s
+                end
+
+=begin                
+                it "Se debe poder multiplicar dos matrices" do
+                        (@matrizA * @matrizB).to_s.should == MatrizDispersa.new([[227,10], [675,22]]).to_s
+                end
+
+=end         
+                it "Se debe poder sumar dos matrices de racionales" do
+                        (@matrizA_R + @matrizB_R).to_s.should == MatrizDispersa.new([{0 => Racional.new(5,1)}, {1 => Racional.new(4,1)}]).to_s
+                end
+
+
+                it "Se debe poder restar dos matrices de racionales" do
+                        (@matrizA_R - @matrizB_R).to_s.should == MatrizDispersa.new([{0 => -@Racional.new(5,1)}, {1 => Racional.new(4,1)}]).to_s
+                end
+
+        end
+        
+        context 'Comprobar las operaciones de la propia matriz (DISPERSA)' do
+
+                it "Se debe mostrar el max de la matriz (DISPERSA)" do
+                        @matrizA.max == 4
+                end
+          
+                it "Se debe mostrar el min de la matriz (DISPERSA)" do
+                        @matrizA.min == 0
+                end
+                
+                it "Se debe mostrar el max de la matriz de racionales (DISPERSA)" do
+                        @matrizA_R.max == Racional.new(4,1)
+                end
+          
+                it "Se debe mostrar el min de la matriz de racionales (DISPERSA)" do
+                        @matrizA_R.min == Racional.new(0,1)
+                end
+
+        end
+
+end
+
+
