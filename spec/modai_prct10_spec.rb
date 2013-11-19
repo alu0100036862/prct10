@@ -187,11 +187,10 @@ describe ModaiPrct10 do
                         (@matrizC_R + @matrizC_R).to_s.should == MatrizDispersa.new([{0 => Racional.new(5,1)}, {1 => Racional.new(4,1)}]).to_s
                 end
 
-=begin
                 it "Se debe poder restar dos matrices de racionales (DISPERSA)" do
                         (@matrizC_R - @matrizC_R).to_s.should == MatrizDispersa.new([{0 => Racional.new(-5,1)}, {1 => Racional.new(4,1)}]).to_s
                 end
-=end   
+   
         end
         
         context 'Comprobar las operaciones de la propia matriz (DISPERSA)' do
