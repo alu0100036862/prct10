@@ -105,7 +105,7 @@ class MatrizDensa < MatrizAbstracta
 	end
 
 	# Máximo de matriz
-	def max(o)
+	def max
 
 		maximo = 0.to_f
 		for i in 0...matriz.size
@@ -120,7 +120,7 @@ class MatrizDensa < MatrizAbstracta
 	end
 
 	# Minimo de matriz
-	def min(o)
+	def min
 
 		minimo = Maxint.to_f
 		for i in 0...matriz.size
@@ -175,12 +175,12 @@ class MatrizDispersa < MatrizAbstracta
 	end
 
 	# Máximo de matriz
-	def max(o)
+	def max
 
 	end
 
 	# Minimo de matriz
-	def min(o)
+	def min
 
 	end
 
