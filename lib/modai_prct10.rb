@@ -56,7 +56,7 @@ class MatrizDensa < MatrizAbstracta
                                 flotante[i][j] = (matriz[i][j]).to_f
                         end
                 end
-                Matriz.new(flotante)
+                MatrizDensa.new(flotante)
 
 	end
 
@@ -70,7 +70,7 @@ class MatrizDensa < MatrizAbstracta
 				suma[i][j] = matriz[i][j] + o.matriz[i][j]
 			end
 		end
-		Matriz.new(suma)
+		MatrizDensa.new(suma)
 
 	end
 
@@ -84,7 +84,7 @@ class MatrizDensa < MatrizAbstracta
 				resta[i][j] = matriz[i][j] - o.matriz[i][j]
 			end
                 end
-                Matriz.new(resta)
+                MatrizDensa.new(resta)
 
 	end
 
@@ -100,7 +100,7 @@ class MatrizDensa < MatrizAbstracta
 				end
 			end
 		end
-		Matriz.new(prod)
+		MatrizDensa.new(prod)
 
 	end
 
