@@ -2,6 +2,8 @@ require "modai_prct10/version"
 require "racional"
 
 module ModaiPrct10
+
+$tope = 9999999999.9
   
 # Clase abstracta para herencia común de matrices densa y dispersa
 class MatrizAbstracta
@@ -122,7 +124,7 @@ class MatrizDensa < MatrizAbstracta
 	# Minimo de matriz
 	def min
 
-		minimo = Maxint.to_f
+		minimo = tope
 		for i in 0...matriz.size
 			for j in 0...matriz[i].size
 				if matriz[i][j].to_f < minimo
