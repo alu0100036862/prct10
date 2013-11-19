@@ -64,7 +64,7 @@ describe ModaiPrct10 do
 
         end
 
-        context 'Comprobar los operaciones entre matrices' do
+        context 'Comprobar las operaciones entre matrices' do
 
                 it "Se debe poder sumar dos matrices" do
                         (@matrizA + @matrizB).to_s.should == MatrizDensa.new([[222,4], [6,8]]).to_s
@@ -86,7 +86,25 @@ describe ModaiPrct10 do
                         (@matrizA_R - @matrizB_R).to_s.should == MatrizDensa.new([[Racional.new(-220,1),Racional.new(0,1)],[Racional.new(0,1),Racional.new(0,1)]]).to_s
                 end
 
+        end
+        
+        context 'Comprobar las operaciones de la propia matriz' do
 
+                it "Se debe mostrar el max de la matriz" do
+                        @matrizA.max == 4.0
+                end
+          
+                it "Se debe mostrar el min de la matriz" do
+                        @matrizA.min == 1.0
+                end
+                
+                it "Se debe mostrar el max de la matriz de racionales" do
+                        @matrizA_R.max == Racional.new(1,1)
+                end
+          
+                it "Se debe mostrar el min de la matriz de racionales" do
+                        @matrizA_R.min == Racional.new(16,4)
+                end
 
         end
 
