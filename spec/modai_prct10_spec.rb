@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'modai_prct10'
+include ModaiPrct10
 
 describe ModaiPrct10 do
 
