@@ -1,5 +1,5 @@
 require "modai_prct10/version"
-require "racional"
+require "modai_prct10/racional"
 
 module ModaiPrct10
   
