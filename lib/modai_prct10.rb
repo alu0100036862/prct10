@@ -304,10 +304,50 @@ class MatrizDispersa < MatrizAbstracta
 
 	end
 
+=begin
 	# Multiplicación de matrices
 	def *(o)
 
+                prod = Array.new(matriz.size - 1,0)
+                for i in 0...matriz.size
+
+			if (o.matriz[i] != nil)
+
+				aux = 0
+				for j in 0...o.matriz.size
+
+					if (matriz[j] != nil)
+
+						if matriz[j].has_key?(i)
+
+							# No existe hash en la fila
+							if prod[j] != nil
+								prod[j] = Hash.new()
+							end
+
+							aux = aux + (o.matriz[i][j] * matriz[j][i])	
+
+						end
+
+					end
+				
+				end
+				if aux <> 0
+					prod.merge!({"#{}" => "#{aux}"})	
+				end
+
+			end
+
+#                                        prod[i][j] = prod[i][j] + (matriz[i][pos] * o.matriz[pos][j])
+ 
+
+				
+                end
+                MatrizDispersa.new(prod)
+
 	end
+
+=end
 
 	# Máximo de matriz
 	def max
