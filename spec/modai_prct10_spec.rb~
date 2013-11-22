@@ -34,12 +34,10 @@ describe ModaiPrct10 do
 
                 # Matrices creadas en horas de practicas
                 matA_P_DEN = [[3.4],[5.6]]
-                matB_P_DIS = [nil,{1 => 1}]
-                matB_R_DIS = [nil,{1 => Racional.new(1,2)}]
+                matB_P_DIS = [nil,{1 => 1}]    #[nil,{1 => Racional.new(1,2)}]
 
                 @matrizA_P_DEN = MatrizDensa.new(matA_P_DEN)
                 @matrizB_P_DIS = MatrizDispersa.new(matB_P_DIS)
-                @matrizB_R_DIS = MatrizDispersa.new(matB_R_DIS)
 
         end
 
@@ -225,13 +223,9 @@ end
         context 'Comprobar modificacion en la hora de practica' do
 
                 it "Se debe sumar matriz DENSA con DISPERSA" do
-                        (@matrizA_P_DEN / @matrizB_P_DIS).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
+                        (@matrizA_P_DEN + @matrizB_P_DIS).to_s.should == MatrizDensa.new([[3,4], [5,7]]).to_s
                 end
-
-                it "Se debe sumar matriz DENSA con DISPERSA con racionales" do
-                        (@matrizA_P_DEN / @matrizB_R_DIS).to_s.should == MatrizDensa.new([[3,4], [5,Racional.new(13,2)]]).to_s
-                end
-
         end
+
 
 end
